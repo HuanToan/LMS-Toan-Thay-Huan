@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LMS Thầy Phúc Toán Đồng Nai</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: '#f0fdfa',
+                100: '#ccfbf1',
+                200: '#99f6e4',
+                300: '#5eead4',
+                400: '#2dd4bf',
+                500: '#14b8a6',
+                600: '#0d9488',
+                700: '#0f766e',
+                800: '#115e59',
+                900: '#134e4a',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: 'Be Vietnam Pro', sans-serif; }
+      
+      /* Ẩn loading message của MathJax */
+      mjx-container { outline: none !important; }
+
+      /* Cấu hình quan trọng để ép MathJax hiển thị inline đẹp mắt */
+      mjx-container:not([display="true"]) {
+        display: inline-block !important;
+        margin: 0 2px !important;
+        vertical-align: middle !important; /* Căn giữa theo dòng chữ */
+      }
+      
+      /* Đảm bảo SVG bên trong cũng inline */
+      mjx-container:not([display="true"]) svg {
+        display: inline-block !important;
+        vertical-align: middle !important;
+      }
+
+      /* Class hỗ trợ wrapper */
+      .inline-math-wrapper {
+        display: inline !important;
+      }
+      
+      /* Markdown Styles */
+      .markdown-body p { margin-bottom: 0.5rem; }
+      .markdown-body ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 0.5rem; }
+      .markdown-body img { max-width: 100%; border-radius: 0.5rem; margin: 1rem 0; border: 1px solid #e2e8f0; }
+    </style>
+    
+    <!-- Cấu hình MathJax -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']], // Nhận diện $...$ là công thức
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        svg: {
+          fontCache: 'global'
+        },
+        startup: {
+          typeset: false // Tắt tự động chạy ban đầu để React kiểm soát
+        }
+      };
+    </script>
+    <!-- Thư viện MathJax -->
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+
+    <!-- Import Map cho Google AI Studio -->
+    <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.run/@google/genai",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "jspdf": "https://esm.sh/jspdf@^3.0.4",
+    "path": "https://esm.sh/path@^0.12.7",
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "url": "https://esm.sh/url@^0.11.4",
+    "react-markdown": "https://esm.sh/react-markdown@9.0.1"
+  }
+}
+</script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
